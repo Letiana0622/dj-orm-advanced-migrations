@@ -1,0 +1,43 @@
+{% extends "school/base.html" %}
+{% load static %}
+
+{% block title %}Список учеников{% endblock %}
+{% block content %}
+<div class="row">
+  <ul>
+  {% for student in students %}
+    <li>{{ student.name }} {{ student.group }}</li>
+    {% for teacher in teachers %}--> Преподаватель:
+      <p>{{ teacher.name }}</p>
+    {% endfor %}
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+<!--{% for i in phones %}-->
+<!--                <td> {{ i.name }} </td><hr>-->
+<!--                <a href="default.asp">-->
+<!--                <img src="i.image">-->
+<!--                </a>-->
+<!--                <td> {{ i.price }} </td><hr>-->
+<!--            {% endfor %}-->
+
+<!-- {% for student in object_list %}-->
+<!--    <li>{{ student.name }} {{ student.group }} <br> Преподаватель: {{ student.teacher.name }} {{ student.teacher.subject }}</li>-->
+<!--  {% endfor %}-->
+<!--  </ul>-->
+
+<!--```html-->
+<!--{% for obj_teacher in object.teachers.all %}-->
+<!--    <p>{{ obj_teacher.name }}</p>-->
+<!--    ...-->
+<!--{% endfor %}-->
+<!--```-->
+
+<!--{% for order in orders %}-->
+<!--    <p>Заказ #{{ order.id }}</p>-->
+<!--    {% for position in order.positions.all %}-->
+<!--        <p>{{ position.product.name }}: {{ position.quantity }}</p>-->
+<!--    {% endfor %}-->
+<!--{% endfor %}-->
